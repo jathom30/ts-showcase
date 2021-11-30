@@ -40,8 +40,6 @@ export const PokemonRoute = () => {
 
 const Pokemon: React.FC<{name: string, onSelect: (type: string, name: string) => void}> = ({name, onSelect}) => {
   const pokemonQuery = useQuery(['pokemon', name], () => api.getPokemonByName(name))
-  
-  
 
   if (pokemonQuery.isLoading) {
     return <span>Loading...</span>

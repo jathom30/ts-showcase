@@ -44,9 +44,6 @@
 }
 
 .HookExample {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   label {
     position: relative;
   }
@@ -55,13 +52,6 @@
     left: 100%;
     color: red;
   }
-}
-
-.ComponentExample {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
 }
 
 .Button {
@@ -73,22 +63,18 @@
   }
 }
 
-h1 {
+h1,
+h2,
+h3,
+p {
   text-transform: capitalize;
+  margin: 0;
 }
 
 .Pokemon {
   background-color: rgba(white, 0.1);
   border: 1px solid white;
   border-radius: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  h2,
-  h3,
-  p {
-    text-transform: capitalize;
-    margin: 0;
-  }
   img {
     max-width: max-content;
   }

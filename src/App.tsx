@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.scss';
 import { useValidatedMask } from './hooks';
 import { Link } from 'react-router-dom';
-import { Button, MaxHeightContainer } from './components';
+import { Box, Button, MaxHeightContainer } from './components';
 import { PokemonRoute } from './routes';
 
 const Home = () => (
@@ -38,6 +38,7 @@ const HookExample = () => {
 
   return (
     <div className="HookExample">
+      <Box kind="flex" flexDirection="column" gap="m">
       <h1>Hooks</h1>
       <label>
         Zip code{' '}
@@ -49,18 +50,19 @@ const HookExample = () => {
         <input value={custom} onChange={(e) => setCustom(e.target.value)} />
         {!isValidCustom ? <span>!!!</span> : null}
       </label>
+      </Box>
     </div>
   )
 }
 
 const ComponentExample = () => {
   return (
-    <div className="ComponentExample">
+    <Box kind="flex" flexDirection="column" gap="m" alignItems="flex-start">
       <h1>Components</h1>
       <Button onClick={() => alert('clicked')}>Hello</Button>
       <Button disabled>Disabled</Button>
       <Button onClick={() => alert('clicked')} primary>Primary</Button>
-    </div>
+    </Box>
   )
 }
 
