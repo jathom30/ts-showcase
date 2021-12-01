@@ -4,8 +4,9 @@ import logo from './logo.svg';
 import './App.scss';
 import { useValidatedMask } from './hooks';
 import { Link } from 'react-router-dom';
-import { Box, Button, MaxHeightContainer } from './components';
+import { Box, MaxHeightContainer } from './components';
 import { PokemonRoute } from './routes';
+import { TodoRoute } from './routes/TodoRoute';
 
 const Home = () => (
   <header className="App-header">
@@ -55,17 +56,6 @@ const HookExample = () => {
   )
 }
 
-const ComponentExample = () => {
-  return (
-    <Box kind="flex" flexDirection="column" gap="m" alignItems="flex-start">
-      <h1>Components</h1>
-      <Button onClick={() => alert('clicked')}>Hello</Button>
-      <Button disabled>Disabled</Button>
-      <Button onClick={() => alert('clicked')} primary>Primary</Button>
-    </Box>
-  )
-}
-
 function App() {
   return (
     <div className="App">
@@ -75,7 +65,7 @@ function App() {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/hooks">Hooks</Link>
-            <Link to="/components">Components</Link>
+            <Link to="/todos">Todos</Link>
             <Link to="/pokemon">Pokemon API</Link>
           </nav>
         }
@@ -87,7 +77,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hooks" element={<HookExample />} />
-            <Route path="/components" element={<ComponentExample />} />
+            <Route path="/todos" element={<TodoRoute />} />
             <Route path="/pokemon" element={<PokemonRoute />} />
           </Routes>
         </div>
