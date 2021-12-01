@@ -50,12 +50,12 @@ export const TodoRoute = () => {
 
   return (
     <div className="TodoRoute">
-      <Box kind="flex" flexDirection="column" gap="l" alignItems="flex-start">
+      <Box display="flex" flexDirection="column" gap="l" alignItems="flex-start">
         <h1>My Todos</h1>
-        <Box kind="flex" flexDirection="column" gap="m">
+        <Box display="flex" flexDirection="column" gap="m">
           {todos?.map((todo) => (
             <div key={todo.id} className="TodoRoute__todo">
-              <Box kind="flex" gap="s" flexDirection="column" padding="s">
+              <Box display="flex" gap="s" flexDirection="column" padding="s">
                 {isEditingId === todo.id ? (
                   <>
                     <input value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
@@ -76,7 +76,7 @@ export const TodoRoute = () => {
         </Box>
         <button onClick={() => setIsCreating(true)}>Create New</button>
         {isCreating ? (
-          <Box kind="flex" flexDirection="column" gap="s">
+          <Box display="flex" flexDirection="column" gap="s">
             <input value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
             <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} />
             <button onClick={handleCreateNew}>Create</button>

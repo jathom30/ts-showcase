@@ -39,7 +39,7 @@ const HookExample = () => {
 
   return (
     <div className="HookExample">
-      <Box kind="flex" flexDirection="column" gap="m">
+      <Box display="flex" flexDirection="column" gap="m">
       <h1>Hooks</h1>
       <label>
         Zip code{' '}

@@ -7,7 +7,7 @@ interface BasicBoxType {
 }
 
 type BoxType = ({
-  kind?: undefined
+  display?: undefined
   flexDirection?: undefined
   gap?: undefined
   minWidth?: undefined
@@ -16,7 +16,7 @@ type BoxType = ({
   autoFill?: undefined
   autoFit?: undefined
 } | {
-  kind: 'flex'
+  display: 'flex'
   flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   gap?: SizeType
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch'
@@ -25,7 +25,7 @@ type BoxType = ({
   autoFill?: undefined
   autoFit?: undefined
 } | {
-  kind: 'grid'
+  display: 'grid'
   flexDirection?: undefined
   gap?: SizeType
   alignItems?: undefined
@@ -34,7 +34,7 @@ type BoxType = ({
   autoFill?: boolean
   autoFit?: undefined
 } | {
-  kind: 'grid'
+  display: 'grid'
   flexDirection?: undefined
   gap?: SizeType
   alignItems?: undefined
@@ -46,7 +46,7 @@ type BoxType = ({
 
 export const Box: React.FC<BoxType> = ({
   children,
-  kind,
+  display,
   flexDirection = 'row',
   gap,
   alignItems,
@@ -68,7 +68,7 @@ export const Box: React.FC<BoxType> = ({
     }
   }
   const style = {
-    ...(kind ? {display: kind} : null),
+    ...(display ? {display} : null),
     ...(flexDirection ? {flexDirection} : null),
     ...(alignItems ? {alignItems} : null),
     ...(justifyContent ? {justifyContent} : null),
